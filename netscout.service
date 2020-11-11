@@ -1,0 +1,8 @@
+[Unit]
+Description="a tasteful software repository sync tool"
+
+[Service]
+ExecStart=/bin/zsh /home/jack/.bin/netscout.zsh
+
+[Install]
+WantedBy=multi-user.target

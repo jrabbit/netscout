@@ -1,0 +1,6 @@
+[Unit]
+Description="tasteful software downloader timer"
+[Timer]
+OnCalendar=6hr
+[Install]
+WantedBy=multi-user.target
