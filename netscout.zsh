@@ -9,10 +9,17 @@ function madison() {
 }
 
 function usc() {
-	for pkg ("signify-openbsd" "gnupg2")
-		do uscanout=$(cd $pkg && uscan 2> /dev/null) 
-		echo $uscanout
-	done
+	# check if diskspace
+	avail=$(df --output=avail $PWD| tail -n1)
+	if [[ $avail -gt 50000 ]]
+	then
+		for pkg ("signify-openbsd" "gnupg2")
+			do uscanout=$(cd $pkg && uscan 2> /dev/null) 
+			echo $uscanout
+		done
+	else
+		echo "Error: out of space!!! bailing!!!"
+	fi
 }
 
 function add_pkg() {
