@@ -8,4 +8,5 @@ target: systemd timer and script
 ## Deps 
 
  - [uscan](apt://devscripts/)
+ - [zshell](apt://zsh)
 
