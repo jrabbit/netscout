@@ -9,6 +9,6 @@ target: systemd timer and script
 
 ## Deps 
 
- - [uscan](apt://devscripts/)
- - [zshell](apt://zsh)
+ - [uscan(1)](apt://devscripts/) https://manpages.debian.org/stable/devscripts/uscan.1.en.html
+ - [zshell](apt://zsh) https://ohmyz.sh/ http://zsh.sourceforge.net/
 
