@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-PACKAGES = ("signify-openbsd" "gnupg2")
-DOWNLOADS_FOLDER = $PWD
+PACKAGES=("signify-openbsd" "gnupg2")
+DOWNLOADS_FOLDER=$PWD
 
 function madison() {
 	#wget -nc "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.23.tar.bz2"
@@ -10,6 +10,7 @@ function madison() {
 		echo $newest
 	done
 }
+
 
 function usc() {
 	# check if diskspace
