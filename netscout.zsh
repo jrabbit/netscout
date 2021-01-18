@@ -3,8 +3,15 @@
 PACKAGES=("signify-openbsd" "gnupg2")
 DOWNLOADS_FOLDER=$PWD
 
+zmodload zsh/mapfile
+
+# TODO: XDG by default
+if [[ -v NETSCOUT_DIR ]]
+then
+	pushd NETSCOUT_DIR
+fi
+
 madison() {
-	#wget -nc "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.23.tar.bz2"
 	for pkg in $PACKAGES
 		do newest=$(apt-cache madison $pkg | cut -d \| -f2 | xargs | cut -d " " -f 1)
 		echo $newest
@@ -19,7 +26,11 @@ usc() {
 	then
 		for pkg in $PACKAGES
 			#  uscan --package gnupg --upstream-version 0.0.0 --watchfile gnupg2-2.2.20/debian/watch
-			do uscanout=$(mkdir -p $pkg && chmod 777 ./$pkg && cd $pkg && apt source $pkg && apt download $pkg && uscan --package $pkg --upstream-version 0.0.0 --watchfile $pkg/$pkg-*/debian/watch 2> /dev/null) 
+			do uscanout=$(mkdir -p $pkg && 
+				chmod -R 777 ./$pkg; 
+				cd $pkg && apt source $pkg && 
+				apt download $pkg &&
+				uscan --package $pkg --upstream-version 0.0.0 --watchfile $pkg/$pkg-*/debian/watch 2> /dev/null) 
 			echo $uscanout
 		done
 	else
@@ -39,3 +50,8 @@ download() {
 }
 
 usc
+
+if [[ -v NETSCOUT_DIR ]]
+then
+	popd
+fi
