@@ -15,6 +15,12 @@ def install(c):
 
 
 @task
+def docker_deps(c):
+    docker = "podman"
+    c.run(f"{docker} pull debian:buster")
+
+
+@task
 def docker_build(c):
     docker = "podman"
     c.run(f"{docker} build . -t jrabbit/netscout:dev")
@@ -23,4 +29,4 @@ def docker_build(c):
 @task
 def docker_run(c):
     docker = "podman"
-    c.run(f"{docker} run -ti jrabbit/netscout:dev")
+    c.run(f"{docker} run -v $PWD:/srv -ti jrabbit/netscout:dev")
