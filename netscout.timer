@@ -1,6 +1,8 @@
 [Unit]
 Description="tasteful software downloader timer"
 [Timer]
-OnCalendar=6hr
+OnBootSec=15min
+OnActiveSec==6hr
+
 [Install]
 WantedBy=multi-user.target

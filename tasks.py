@@ -12,6 +12,7 @@ def install(c):
     c.run("cp -a ./netscout.service ./netscout.timer ~/.config/systemd/user/")
     c.run("systemctl --user reload-daemon")
     c.run("systemctl --user enable netscout.timer")
+    c.run("systemctl --user start netscout.timer")
 
 
 @task
