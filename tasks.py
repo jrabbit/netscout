@@ -18,7 +18,7 @@ def install(c):
 @task
 def docker_deps(c):
     docker = "podman"
-    c.run(f"{docker} pull debian:buster")
+    c.run(f"{docker} pull debian:bullseye")
 
 
 @task

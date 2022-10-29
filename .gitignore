@@ -4,3 +4,6 @@
 *.gz
 *.dsc
 *.deb
+venv
+signify-openbsd
+gnupg2
