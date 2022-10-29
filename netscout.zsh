@@ -1,14 +1,14 @@
 #!/usr/bin/env zsh
 
-PACKAGES=("signify-openbsd" "gnupg2")
+PACKAGES=("signify-openbsd" "gnupg2" "age")
 DOWNLOADS_FOLDER=$PWD
 
 zmodload zsh/mapfile
 
 # TODO: XDG by default
-if [[ -v NETSCOUT_DIR ]]
+if [[ -e $NETSCOUT_DIR ]]
 then
-	pushd NETSCOUT_DIR
+	pushd $NETSCOUT_DIR
 fi
 
 madison() {
@@ -51,7 +51,7 @@ download() {
 
 usc
 
-if [[ -v NETSCOUT_DIR ]]
+if [[ -e $NETSCOUT_DIR ]]
 then
 	popd
 fi
