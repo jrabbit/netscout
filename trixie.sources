@@ -1,0 +1,27 @@
+Types: deb-src
+# http://snapshot.debian.org/archive/debian/20251103T204410Z
+URIs: http://deb.debian.org/debian
+Suites: trixie trixie-updates
+Components: main
+Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp
+
+Types: deb-src
+# http://snapshot.debian.org/archive/debian-security/20251103T204410Z
+URIs: http://deb.debian.org/debian-security
+Suites: trixie-security
+Components: main
+Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp
+root@32517b690cd1:/# cat /etc/apt/sources.list.d/debian.sources
+Types: deb-src
+# http://snapshot.debian.org/archive/debian/20251103T204410Z
+URIs: http://deb.debian.org/debian
+Suites: trixie trixie-updates
+Components: main
+Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp
+
+Types: deb-src
+# http://snapshot.debian.org/archive/debian-security/20251103T204410Z
+URIs: http://deb.debian.org/debian-security
+Suites: trixie-security
+Components: main
+Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp

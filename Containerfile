@@ -1,7 +1,7 @@
-FROM debian:bullseye
+FROM debian:trixie
 ENV DEBIAN_FRONTEND noninteractive
 
-ADD sources-bullseye.list /etc/apt/sources.list.d/
+ADD trixie.sources /etc/apt/sources.list.d/
 RUN apt update && apt --no-install-recommends install zsh devscripts -y 
 
 ADD netscout.zsh /srv/
