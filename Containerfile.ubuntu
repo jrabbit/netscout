@@ -1,0 +1,11 @@
+FROM ubuntu:questing
+ENV DEBIAN_FRONTEND=noninteractive
+
+ADD questing.sources /etc/apt/sources.list.d/
+RUN apt update && apt --no-install-recommends install zsh devscripts -y 
+
+ADD netscout.zsh /srv/
+
+WORKDIR /srv/
+
+CMD ["zsh", "netscout.zsh"]

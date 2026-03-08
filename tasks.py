@@ -24,7 +24,8 @@ def docker_deps(c):
 @task
 def docker_build(c):
     docker = "podman"
-    c.run(f"{docker} build . -t jrabbit/netscout:dev")
+    # c.run(f"{docker} build . -t jrabbit/netscout:dev")
+    c.run(f"{docker} build -f Containerfile.ubuntu . -t jrabbit/netscout:dev")
 
 
 @task
